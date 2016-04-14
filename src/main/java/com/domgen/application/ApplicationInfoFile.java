@@ -16,6 +16,7 @@ public interface ApplicationInfoFile {
 	String welcome_messahe="WELCOME TO SPRING MVC THIS IS BEGINING OF MY LEARNING";
 	String forward_to_index_page="index";
 	String age="38";
+	String googleSearch="https://www.google.co.uk";
 
 	
 }
