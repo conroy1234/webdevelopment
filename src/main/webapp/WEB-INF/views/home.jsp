@@ -12,7 +12,7 @@ lang="en" xmlns="http://www.w3.org/1999/xhtml"
 <em><h1 style="color:#ff0000;">
 	${welcome_display}!  
 </h1></em>
-a
+
 <P> ${welcome_messahe}</P>
 <em><a href= ${forward_to_index_page} > index page</a></em>
 </body>
