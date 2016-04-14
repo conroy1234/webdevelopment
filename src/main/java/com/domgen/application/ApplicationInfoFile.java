@@ -15,6 +15,7 @@ public interface ApplicationInfoFile {
 	String name="thes is the begining of my spring project";
 	String welcome_messahe="WELCOME TO SPRING MVC THIS IS BEGINING OF MY LEARNING";
 	String forward_to_index_page="index";
+	String age="38";
 
 	
 }
