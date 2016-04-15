@@ -19,6 +19,7 @@
 			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
+
 	<dependencies>
 
 		<!-- Spring -->
@@ -134,6 +135,11 @@
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.4.6</version>
 		</dependency>
 	</dependencies>
 	<build>

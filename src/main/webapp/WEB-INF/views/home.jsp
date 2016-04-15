@@ -1,19 +1,22 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="en" xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:h="http://sxmls.jcp.org./jsf/html"
-		xmlns:p="http://primefaces.orgui">
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<html>
 <head>
 	<title>Home</title>
+	<em><h1>
+	${welcome_display} 
+</h1></em>
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<script type="text/javascript" src="<c:url value="/resources/js/main.js" />"></script>
+
 </head>
 <body>
-<em><h1 style="color:#ff0000;">
-	${welcome_display}!  
-</h1></em>
 
-<P> ${welcome_messahe}</P>
-<em><a href= ${forward_to_index_page} > index page</a></em>
+<input id="loginPage" type="button" value="Login" onclick="indexFunction();" /><br/>
+<input id="ingexPage" type="button" value="about me" onclick="loginFunction ();" />
+
+
+
 </body>
 </html>

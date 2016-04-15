@@ -1,4 +1,4 @@
-package com.domgen.application;
+package com.domgen.constants;
 
 import javax.annotation.ManagedBean;
 import javax.inject.Named;
@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Scope;
 @Scope("Session")
 public interface ApplicationInfoFile {
 
-	String welcome_display="SPRING APPLICATION CONFIGERATION";
+	String welcome_display="Welcom to my website thank you for visiting!<br/>";
 	String name="thes is the begining of my spring project";
-	String welcome_messahe="WELCOME TO SPRING MVC THIS IS BEGINING OF MY LEARNING";
+	String welcome_messahe="Welcom to my website thank you for visiting!<br/>";
 	String forward_to_index_page="index";
 	String age="38";
 	String googleSearch="https://www.google.co.uk";
