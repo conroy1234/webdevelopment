@@ -1,4 +1,4 @@
-package com.domgen.corp;
+package com.domgen.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,7 @@ public class formController implements IConstants {
 
 		model.addAttribute("customer", new Customer());
 		model.addAttribute("message", welcome_message);
-		return "form/formhome";
+		return formHome;
 	}
 
 	@RequestMapping(value = "customer", params = "customerLogin", method = RequestMethod.POST)
@@ -27,6 +27,6 @@ public class formController implements IConstants {
 		model.addAttribute("name", customer.getName());
 		model.addAttribute("number", customer.getNumber());
 		model.addAttribute("address", customer.getAddress());
-		return "form/customer";
+		return customer_form;
 	}
 }

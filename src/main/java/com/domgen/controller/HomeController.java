@@ -1,4 +1,4 @@
-package com.domgen.corp;
+package com.domgen.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.domgen.constants.ApplicationInfoFile;
+import com.domgen.constants.IConstants;
 
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController implements ApplicationInfoFile{
+public class HomeController implements IConstants{
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -34,13 +34,13 @@ public class HomeController implements ApplicationInfoFile{
 		model.addAttribute("forward_to_index_page",forward_to_index_page);
 		model.addAttribute("welcome_display", welcome_display);
 		
-		return "home";
+		return MAIN_PAGE;
 	}
 	
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String index(Model model){
 			model.addAttribute("application",name);
-	return"index";	
+	return indexPage;	
 	}
 	
 	
