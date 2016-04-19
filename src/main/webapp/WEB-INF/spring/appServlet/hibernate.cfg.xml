@@ -3,27 +3,31 @@
 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-   <session-factory>
-   <property name="hibernate.dialect">
-      org.hibernate.dialect.MySQLDialect
-   </property>
-   <property name="hibernate.connection.driver_class">
-      com.mysql.jdbc.Driver
-   </property>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="connection.datasource">
+			java:/comp/env/jdbc/AuctionDB
+		</property>
+		<!-- Assume test is the database name -->
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost/product
+		</property>
+		<property name="hibernate.connection.username">
+			root
+		</property>
+		<property name="hibernate.connection.password">
+			cnwl
+		</property>
+		<property name="show_sql">true</property>
+		<!-- List of XML mapping files -->
+		<mapping resource="hibernate/product.hbm.xml" />		
 
-   <!-- Assume test is the database name -->
-   <property name="hibernate.connection.url">
-      jdbc:mysql://localhost/product
-   </property>
-   <property name="hibernate.connection.username">
-      root
-   </property>
-   <property name="hibernate.connection.password">
-      cnwl
-   </property>
-
-   <!-- List of XML mapping files -->
-   <mapping resource="product.hbm.xml"/>
-
-</session-factory>
+	</session-factory>
 </hibernate-configuration>
+
+

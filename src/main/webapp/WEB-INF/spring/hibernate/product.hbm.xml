@@ -7,12 +7,13 @@
  
     <class name="Product" table="PRODUCT">
         <id name="productId" column="PRODUCT_ID">
-            <generator class="native" />
+            <generator class="increment" />
         </id>
                  
-        <property name="name"type="string" column="NAME" />
+        <property name="name" type="string" column="NAME" />
         <property name="price" type="string" column="price" />
         <property name="discription" type="string" column="DISCRIPTION" />
          
     </class>
 </hibernate-mapping>
+

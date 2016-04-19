@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import com.domgen.dto.Product;
@@ -18,13 +19,14 @@ public class ProductDao implements IProductDAO {
 	}
 
 	@Override
-	public void insertProduct(Product product) throws Exception {			
+	public void insertProduct(Product product) throws Exception {	
 		
-		Session session = sessionFactory.openSession();		
-		session.beginTransaction();
+		Session session = sessionFactory.openSession();	
+		Transaction tx = session.beginTransaction();
+		tx = session.beginTransaction();
 		session.save(product);
-		session.getTransaction().commit();
-
+		tx.commit();
+		session.close();
 	}
 
 	@Override
