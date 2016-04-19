@@ -4,7 +4,11 @@
 
  
 <application> 
-	<message-bundle>i18nFaces</message-bundle> 
+	<message-bundle>i18nFaces</message-bundle>
+	<message-bundle>resources.application</message-bundle>
+	<locale-config>
+		<default-locale>en</default-locale>
+	</locale-config> 
 	<resource-bundle> 
 		<base-name>i18n</base-name> 
 			<var>i18n</var> 
