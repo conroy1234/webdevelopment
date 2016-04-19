@@ -36,23 +36,40 @@
 			<beans:value>.jsp</beans:value>
 		</beans:property>
 	</beans:bean>
-
-<!-- <beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-        destroy-method="close">
-        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <beans:property name="url" value="jdbc:mysql://localhost:3306/PRODUCT" />
-        <beans:property name="username" value="root" />
-        <beans:property name="password" value="cnwl" />
-    </beans:bean>
- -->
-
 	
-<!-- <beans:bean id="sessionFactory"
-class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
-    <beans:property name="dataSource">
-        <ref bean="dataSource"/>
-    </beans:property> 
-   
-</beans:bean>-->
+<!-- hibernat.cfg.xml file is not needed because it is configered in spring -->
+
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver"></beans:property>
+		<beans:property name="url" value="jdbc:mysql://localhost/product"></beans:property>
+		<beans:property name="username" value="root"></beans:property>
+		<beans:property name="password" value="cnwl"></beans:property>
+	</beans:bean>
+
+
+	<beans:bean id="mysessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+		<beans:property name="mappingResources">
+			<beans:list>
+				<beans:value>product.hbm.xml</beans:value>
+			</beans:list>
+		</beans:property>
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</beans:prop>
+				<beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
+				<beans:prop key="hibernate.show_sql">true</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+
+<beans:bean id="template" class="org.springframework.orm.hibernate3.HibernateTemplate">  
+   <beans:property name="sessionFactory" ref="mysessionFactory"></beans:property>  
+   </beans:bean>  
+
+<beans:bean id="d" class="com.domgen.dto.Product">  
+ <beans:property name="template" ref="template"></beans:property>  
+ </beans:bean>  
 
 </beans:beans>

@@ -4,12 +4,24 @@ import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 import javax.inject.Scope;
 
+import org.springframework.orm.hibernate3.HibernateTemplate;
+
 public class Product {
 
 @Named	
 private String name;
 private String price;
 private String discription;
+private HibernateTemplate template;  
+
+
+	public HibernateTemplate getTemplate() {
+	return template;
+}
+
+public void setTemplate(HibernateTemplate template) {
+	this.template = template;
+}
 
 	public String getPrice() {
 	return price;
